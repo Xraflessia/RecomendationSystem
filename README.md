@@ -107,6 +107,7 @@ memory usage: 16.6+ MB
 * Ditemukan banyak ISBN yang unik, menandakan variasi buku yang tinggi. Beberapa judul atau gambar buku ditemukan berulang, yang menjadi indikasi adanya kemungkinan duplikasi berdasarkan konten, bukan baris.
 
 ### 4. Eksplorasi Data Ratings.csv
+```
 <class 'pandas.core.frame.DataFrame'>
 RangeIndex: 1149780 entries, 0 to 1149779
 Data columns (total 3 columns):
@@ -117,6 +118,7 @@ Data columns (total 3 columns):
  2   Book-Rating  1149780 non-null  int64 
 dtypes: int64(2), object(1)
 memory usage: 26.3+ MB
+```
 
 * Data terdiri dari 3 kolom utama: User-ID, ISBN, dan Book-Rating.
 * Tidak ditemukan *missing value* dan semua entri valid secara struktur.
@@ -126,6 +128,7 @@ memory usage: 26.3+ MB
 * Tidak ditemukan baris duplikat dalam data rating.
 
 ### 5. Eksplorasi Data Users.csv
+```
 <class 'pandas.core.frame.DataFrame'>
 RangeIndex: 278858 entries, 0 to 278857
 Data columns (total 3 columns):
@@ -136,6 +139,7 @@ Data columns (total 3 columns):
  2   Age       168096 non-null  float64
 dtypes: float64(1), int64(1), object(1)
 memory usage: 6.4+ MB
+```
 * Terdiri dari 3 kolom utama: User-ID, Location, dan Age.
 * Terdapat 110.762 entri usia yang hilang (sekitar 40% data).
 * Ditemukan nilai usia tidak wajar, misalnya 0 tahun hingga 244 tahun, yang menandakan adanya data ekstrem atau anomali.
@@ -272,34 +276,41 @@ Tiga kolom utama (User-ID, ISBN, dan Book-Rating) dikonversi ke dalam bentuk lis
 ---
 
 ### 8. Membuat DataFrame Bersih
-	user_id	isbn	book_rating
-0	276847	3404148576	8
-1	276847	3404921178	7
-2	276847	3426029553	8
-3	276847	3442413508	10
-4	276847	3442437717	7
-...	...	...	...
-98396	276688	0743202694	10
-98397	276688	0836218655	10
-98398	276688	0836236688	10
-98399	276688	0892966548	10
-98400	276688	1551669315	6
-98401 rows × 3 columns
+```
+   user_id       isbn  book_rating
+0   276847  3404148576            8
+1   276847  3404921178            7
+2   276847  3426029553            8
+3   276847  3442413508           10
+4   276847  3442437717            7
+...
+98396   276688  0743202694           10
+98397   276688  0836218655           10
+98398   276688  0836236688           10
+98399   276688  0892966548           10
+98400   276688  1551669315            6
+
+[98401 rows × 3 columns]
+```
 
 Dari list yang telah dibuat, disusun kembali sebuah DataFrame baru bernama ratings_clean yang berisi tiga kolom utama: user\_id, isbn, dan book\_rating. Struktur ini lebih terorganisir untuk keperluan modeling.
 
 ---
 
 ### 9. Pembuatan User-Item Matrix
+```
 User-Item Matrix Shape: (2469, 15048)
-isbn	0002005018	0002116286	0002251760	0002259001	0002550563	0003300277	000458726X	0006157629	0006472427	0006475973	...	9726101794	972708253X	9727591965	9727722458	9728605161	9812327975	9871138148	987932504	B00009EF82	B0000AA9IZ
-user_id																					
-242	NaN	NaN	NaN	NaN	NaN	NaN	NaN	NaN	NaN	NaN	...	NaN	NaN	NaN	NaN	NaN	NaN	NaN	NaN	NaN	NaN
-254	NaN	NaN	NaN	NaN	NaN	NaN	NaN	NaN	NaN	NaN	...	NaN	NaN	NaN	NaN	NaN	NaN	NaN	NaN	NaN	NaN
-507	NaN	NaN	NaN	NaN	NaN	NaN	NaN	NaN	NaN	NaN	...	NaN	NaN	NaN	NaN	NaN	NaN	NaN	NaN	NaN	NaN
-638	NaN	NaN	NaN	NaN	NaN	NaN	NaN	NaN	NaN	NaN	...	NaN	NaN	NaN	NaN	NaN	NaN	NaN	NaN	NaN	NaN
-643	NaN	NaN	NaN	NaN	NaN	NaN	NaN	NaN	NaN	NaN	...	NaN	NaN	NaN	NaN	NaN	NaN	NaN	NaN	NaN	NaN
-5 rows × 15048 columns
+
+isbn       0002005018  0002116286  0002251760  0002259001  0002550563  ...  B00009EF82  B0000AA9IZ
+user_id                                                                                
+242              NaN        NaN        NaN        NaN        NaN     ...        NaN        NaN
+254              NaN        NaN        NaN        NaN        NaN     ...        NaN        NaN
+507              NaN        NaN        NaN        NaN        NaN     ...        NaN        NaN
+638              NaN        NaN        NaN        NaN        NaN     ...        NaN        NaN
+643              NaN        NaN        NaN        NaN        NaN     ...        NaN        NaN
+
+[5 rows × 15048 columns]
+```
 User-Item Matrix dibuat menggunakan fungsi pivot_table dari pandas. Matriks ini penting sebagai dasar pendekatan collaborative filtering karena memetakan interaksi antara pengguna dan buku berdasarkan rating.
 
 **Hasil:**
@@ -513,7 +524,7 @@ Metrik ini menghitung **rata-rata kuadrat selisih** antara nilai aktual dan pred
 
 ### Visualisasi Learning Curve
 
-![Learning Curve](image/Learning%20Curve%20-%20RMSE.png)
+![Learning Curve](asset/LearningCurve.png)
 
 #### **Insight:**
 
