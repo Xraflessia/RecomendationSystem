@@ -523,8 +523,7 @@ Metrik ini menghitung **rata-rata kuadrat selisih** antara nilai aktual dan pred
 ---
 
 ### Visualisasi Learning Curve
-
-![Learning Curve](asset/LearningCurve.png)
+![Learning Curve](assets/LearningCurve.png)
 
 #### **Insight:**
 
