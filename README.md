@@ -163,6 +163,7 @@ Langkah selanjutnya adalah melakukan *data cleaning* lanjutan, termasuk imputasi
 ## Exploratory Data Analysis (EDA)
 #### 1. 10 Buku dengan Rating Terbanyak
 ![Rating Banyak](assets/10TopRateBooks.png)
+
 Analisis ini mengambil 10 ISBN dengan jumlah rating terbanyak dari dataset ratings, kemudian menggabungkannya dengan data books untuk mendapatkan judul dan penulis.
 
 Buku berjudul **"Wild Animus"** tercatat sebagai buku dengan rating terbanyak, melebihi 2.500 rating. Jaraknya cukup jauh dibanding buku lain seperti *The Lovely Bones* dan *The Da Vinci Code*. Ini mengindikasikan bahwa buku tersebut kemungkinan besar mengalami promosi masif atau bahkan distribusi gratis dalam skala besar.
@@ -177,6 +178,7 @@ Data ini juga sangat cocok digunakan untuk metode **rekomendasi berbasis popular
 
 #### 2. Distribusi Nilai Rating Buku
 ![Rating Buku](assets/DistribusiRatingNilaiBuku.png)
+
 Visualisasi distribusi rating menunjukkan bahwa sebagian besar rating yang diberikan oleh pengguna adalah **rating 0**. Namun, rating valid dengan nilai tinggi seperti **8**, **9**, dan **10** juga cukup sering muncul. Ini menunjukkan adanya kecenderungan pengguna memberikan rating hanya pada buku yang mereka sukai.
 
 Ketimpangan antara rating 0 dan rating valid cukup besar. Rating 0 bisa dianggap sebagai bentuk implicit feedback, yaitu ketika pengguna telah membaca atau melihat buku namun tidak memberikan rating eksplisit.
@@ -187,6 +189,7 @@ Distribusi ini perlu diperhatikan dalam pembangunan sistem rekomendasi, karena a
 
 #### 3. Distribusi Usia Pengguna
 ![Usia Pengguna](assets/DistribusiUsiaPengguna.png)
+
 Hasil visualisasi distribusi usia pengguna menunjukkan bahwa sebagian besar pengguna berada dalam rentang usia **20 hingga 50 tahun**, dengan puncaknya di sekitar usia **30 tahun**. Ini mencerminkan bahwa pengguna aktif berada dalam usia produktif dan dewasa muda.
 
 Namun, terdapat nilai-nilai usia yang tidak wajar, seperti di atas 100 tahun hingga mendekati 244 tahun. Nilai-nilai ini kemungkinan besar merupakan kesalahan input dan perlu ditangani pada tahap data cleaning agar tidak mengganggu analisis dan modeling.
