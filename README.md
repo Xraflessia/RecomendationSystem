@@ -78,6 +78,7 @@ Setelah file diekstrak dan dimuat ke dalam DataFrame, didapatkan jumlah data seb
 * Ratings.csv: 1.149.780 baris, 3 kolom
 
 ### 3. Eksplorasi Data Books.csv
+```
 <class 'pandas.core.frame.DataFrame'>
 RangeIndex: 271360 entries, 0 to 271359
 Data columns (total 8 columns):
@@ -93,6 +94,7 @@ Data columns (total 8 columns):
  7   Image-URL-L          271357 non-null  object
 dtypes: object(8)
 memory usage: 16.6+ MB
+```
 
 * Dataset berisi informasi seperti ISBN, judul buku, penulis, tahun terbit, penerbit, dan URL gambar.
 * Tipe data seluruh kolom adalah object (string).
@@ -115,6 +117,7 @@ Data columns (total 3 columns):
  2   Book-Rating  1149780 non-null  int64 
 dtypes: int64(2), object(1)
 memory usage: 26.3+ MB
+
 * Data terdiri dari 3 kolom utama: User-ID, ISBN, dan Book-Rating.
 * Tidak ditemukan *missing value* dan semua entri valid secara struktur.
 * Nilai rating berkisar dari 0 hingga 10, dengan rata-rata sekitar 2.87.
