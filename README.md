@@ -1,7 +1,7 @@
 # Laporan Proyek Machine Learning - Cindy Alya Putri
 
 ## Project Overview
-##**Latar Belakang**
+**Latar Belakang**
 
 Dalam era digital saat ini, semakin banyak pengguna yang mengakses buku secara online, baik untuk keperluan belajar maupun hiburan. Namun, jumlah buku yang sangat besar justru sering membuat pengguna kesulitan dalam memilih bacaan yang sesuai dengan minat mereka. Hal ini menimbulkan kebutuhan akan sistem yang mampu memberikan rekomendasi secara otomatis dan personal.
 
